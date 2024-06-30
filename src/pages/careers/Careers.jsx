@@ -6,7 +6,7 @@ export default function Careers() {
   return (
     <div className="careers">
       {careers.map((career) => (
-        <Link to="/" key={career.id}>
+        <Link to={career.id} key={career.id}>
           <p>{career.title}</p>
           <p>Based in {career.location}</p>
         </Link>
@@ -17,7 +17,7 @@ export default function Careers() {
 
 //loader function
 export const careersLoader = async () => {
-  const res = await fetch("https://jsonfakery.com/jobs");
+  const res = await fetch("https://jsonfakery.com/jobs/random/10");
 
   return res.json();
 };
