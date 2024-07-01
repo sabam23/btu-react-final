@@ -23,6 +23,8 @@ errorElement
 
 მარტივი ანიმაციები(Framer motion) ვაკანსიის ქარდზე და ვაკანსიის დეტალურ ქარდზე.
 
+ფუნქციონალს დავამატე ე.წ Breadcrumbs
+
 ---
 
 ### Libraries and packages
@@ -39,12 +41,12 @@ Jobs api - [Mock API](https://6682553a04acc3545a091590.mockapi.io/api/jobs/jobs)
 **Object Model**
 ```json
 {
-    "title": "Direct Program Strategist",
-    "salary": "475.68",
-    "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-    "location": "Renton",
+    "title": "React Developer",
+    "salary": "2000",
+    "description": "Description",
+    "location": "Tbilisi",
     "deadline": "2024-09-16T00:15:07.054Z",
-    "company": "Dietrich - Bergstrom",
+    "company": "Btu",
     "id": "1"
 }
 ```
