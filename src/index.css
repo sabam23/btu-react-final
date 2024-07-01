@@ -119,6 +119,13 @@ form label span {
   margin-bottom: 10px;
 }
 
+@media only screen and (max-width: 400px) {
+  form input,
+  form textarea {
+    width: 90%;
+  }
+}
+
 /* careers list */
 .careers > a {
   display: block;
@@ -128,13 +135,13 @@ form label span {
   margin: 20px 0;
   text-decoration: none;
 }
-.careers > a:hover p {
+.careers a:hover p {
   color: var(--primary);
 }
 .careers p {
   margin: 0;
 }
-.careers > a p:last-child {
+.careers a p:last-child {
   font-size: 0.8em;
   color: #bbb;
 }
@@ -187,8 +194,8 @@ form label span {
   cursor: pointer;
 }
 
-.saved-job {
-  position: relative;
+.saved-job > p {
+  width: 90%;
 }
 
 /* career layout */
@@ -209,4 +216,19 @@ form label span {
 }
 .careers-layout nav a.active {
   background: var(--primary);
+}
+
+/* careers list */
+.saved-jobs > a {
+  display: block;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px 0;
+  text-decoration: none;
+  width: 90%;
+}
+
+.saved-jobs {
+  background: rgba(0, 0, 0, 0.2);
+  position: relative;
 }

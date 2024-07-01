@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useRevalidator } from "react-router-dom";
 
 // helper
 import { deleteCareer, fetchData } from "../../helper";
@@ -14,30 +14,34 @@ import { toast } from "react-toastify";
 
 export default function SavedCareers() {
   const { careers } = useLoaderData();
+  const revalidator = useRevalidator();
 
   return (
     <div className="careers">
-      {careers.map((career) => (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.8 }}
-          className="careers"
-        >
-          <Link to="/careers/saved" className="saved-job" key={career.id}>
-            <p>{career.title}</p>
-            <p>Based in {career.location}</p>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.8 }}
+        className="careers"
+      >
+        {careers.map((career) => (
+          <div className="saved-jobs" key={career.id}>
+            <Link to={`/careers/` + career.id} className="saved-job">
+              <p>{career.title}</p>
+              <p>Based in {career.location}</p>
+            </Link>
             <TrashIcon
               className="icon"
               width={20}
               onClick={() => {
                 deleteCareer("savedCareers", career.id);
-                toast.success("Deleted")
+                toast.success("Removed from saved");
+                revalidator.revalidate();
               }}
             />
-          </Link>
-        </motion.div>
-      ))}
+          </div>
+        ))}
+      </motion.div>
     </div>
   );
 }

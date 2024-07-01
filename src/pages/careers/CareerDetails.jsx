@@ -57,7 +57,7 @@ export default function CareerDetails() {
           onClick={() => {
             deleteCareer("savedCareers", career.id);
             setSaved(false);
-            toast.success("Deleted");
+            toast.success("Removed from saved");
           }}
         />
       )}
