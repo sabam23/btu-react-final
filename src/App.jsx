@@ -21,9 +21,9 @@ import MainLayout from "./layouts/MainLayout";
 import HelpLayout from "./layouts/HelpLayout";
 import CareersLayout from "./layouts/CareersLayout";
 
-
 // error element
 import CareersError from "./pages/careers/CareerError";
+import SavedCareers, { savedCareersLoader } from "./pages/careers/SavedCareers";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -46,6 +46,11 @@ const router = createBrowserRouter(
           path=":id"
           element={<CareerDetails />}
           loader={careerDetailsLoader}
+        />
+        <Route
+          path="saved"
+          element={<SavedCareers />}
+          loader={savedCareersLoader}
         />
       </Route>
 
