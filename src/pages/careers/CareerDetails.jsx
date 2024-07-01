@@ -1,8 +1,9 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { useState } from "react";
 
 // helper
 import {
-    deleteCareer,
+  deleteCareer,
   formatCurrency,
   formatDateToLocalString,
   itemExistsInLocalStorage,
@@ -11,7 +12,9 @@ import {
 
 // assets
 import { StarIcon, TrashIcon } from "@heroicons/react/16/solid";
-import { useState } from "react";
+
+// animation
+import { motion } from "framer-motion";
 
 export default function CareerDetails() {
   const career = useLoaderData();
@@ -20,7 +23,12 @@ export default function CareerDetails() {
   );
 
   return (
-    <div className="career-details">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.8 }}
+      className="career-details"
+    >
       <h2>Career Details for {career.title}</h2>
       <p>Starting salary: {formatCurrency(career.salary)}$</p>
       <p>Company: {career.company}</p>
@@ -48,7 +56,7 @@ export default function CareerDetails() {
           }}
         />
       )}
-    </div>
+    </motion.div>
   );
 }
 
