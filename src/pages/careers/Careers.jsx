@@ -17,7 +17,7 @@ export default function Careers() {
 
 //loader function
 export const careersLoader = async () => {
-  const res = await fetch("https://jsonfakery.com/jobs/random/10");
+  const res = await fetch("https://6682553a04acc3545a091590.mockapi.io/api/jobs/jobs");
 
   return res.json();
 };
