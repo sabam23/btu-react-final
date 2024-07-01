@@ -7,7 +7,8 @@ import { deleteCareer, fetchData } from "../../helper";
 import { TrashIcon } from "@heroicons/react/16/solid";
 
 export default function SavedCareers() {
-  const { careers } = useLoaderData();
+  const { careers } = useLoaderData(); 
+  
   return (
     <div className="careers">
       {careers.map((career) => (

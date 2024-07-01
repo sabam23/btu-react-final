@@ -47,6 +47,22 @@ header nav a.active {
   background: var(--primary);
 }
 
+@media only screen and (max-width: 400px) {
+  header nav h1 {
+    display: none;
+  }
+
+  header nav {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  header nav a {
+    padding: 3px;
+    font-size: 14px;
+  }
+}
+
 /* page content */
 main {
   max-width: 1200px;
@@ -130,6 +146,12 @@ form label span {
   margin: 20px 0;
 }
 
+@media only screen and (max-width: 400px) {
+  .career-details > h2 {
+    font-size: 17px;
+  }
+}
+
 /* breadcrumbs */
 .breadcrumbs {
   max-width: 1200px;
@@ -160,7 +182,7 @@ form label span {
   right: 15px;
 }
 
-.icon:hover{
+.icon:hover {
   color: red;
   cursor: pointer;
 }

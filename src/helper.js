@@ -9,7 +9,11 @@ export const formatCurrency = (amt) => {
 
 // fetch data
 export const fetchData = (key) => {
-  return JSON.parse(localStorage.getItem(key));
+  if (JSON.parse(localStorage.getItem(key))) {
+    return JSON.parse(localStorage.getItem(key));
+  }
+
+  return [];
 };
 
 // save career to localstorage
@@ -35,9 +39,9 @@ export const deleteCareer = (key, id) => {
 
 // item exists
 export const itemExistsInLocalStorage = (key, id) => {
-    const existingData = JSON.parse(localStorage.getItem(key)) || [];
-  
-    const itemExists = existingData.some((item) => item.id === id);
-  
-    return itemExists;
-  };
+  const existingData = JSON.parse(localStorage.getItem(key)) || [];
+
+  const itemExists = existingData.some((item) => item.id === id);
+
+  return itemExists;
+};
