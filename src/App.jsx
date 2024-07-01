@@ -24,6 +24,11 @@ import CareersLayout from "./layouts/CareersLayout";
 // error element
 import CareersError from "./pages/careers/CareerError";
 import SavedCareers, { savedCareersLoader } from "./pages/careers/SavedCareers";
+import CareerForm, { careerFormAction } from "./pages/careers/CareerForm";
+
+// library
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -52,6 +57,11 @@ const router = createBrowserRouter(
           element={<SavedCareers />}
           loader={savedCareersLoader}
         />
+        <Route
+          path="create"
+          element={<CareerForm />}
+          action={careerFormAction}
+        />
       </Route>
 
       <Route path="*" element={<NotFound />} />
@@ -60,7 +70,12 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </>
+  );
 }
 
 export default App;

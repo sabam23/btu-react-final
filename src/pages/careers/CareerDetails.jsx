@@ -16,6 +16,9 @@ import { StarIcon, TrashIcon } from "@heroicons/react/16/solid";
 // animation
 import { motion } from "framer-motion";
 
+// library
+import { toast } from "react-toastify";
+
 export default function CareerDetails() {
   const career = useLoaderData();
   const [saved, setSaved] = useState(
@@ -44,6 +47,7 @@ export default function CareerDetails() {
           onClick={() => {
             saveCareer(career);
             setSaved(true);
+            toast.success("Saved");
           }}
         />
       ) : (
@@ -53,6 +57,7 @@ export default function CareerDetails() {
           onClick={() => {
             deleteCareer("savedCareers", career.id);
             setSaved(false);
+            toast.success("Deleted");
           }}
         />
       )}

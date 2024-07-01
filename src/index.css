@@ -11,7 +11,7 @@ body {
   background: var(--secondary);
 }
 * {
-  color: #fff;
+  color: #8e8b8b;
   margin: 0;
 }
 p {
@@ -189,4 +189,24 @@ form label span {
 
 .saved-job {
   position: relative;
+}
+
+/* career layout */
+.careers-layout nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+.careers-layout nav a {
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.careers-layout nav a:hover {
+  border-color: var(--primary);
+}
+.careers-layout nav a.active {
+  background: var(--primary);
 }

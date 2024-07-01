@@ -6,6 +6,7 @@ export default function CareersLayout() {
       <h2>Careers</h2>
       <nav>
         <NavLink to="saved">Saved Careers</NavLink>
+        <NavLink to="create">Add New Career</NavLink>
       </nav>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, odio?
